@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/4419d23bf4.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-image: url('{{ asset('img/pattern.jpg') }}');">
     <div class="display">
         <x-navbar/>
         {{ $slot }}

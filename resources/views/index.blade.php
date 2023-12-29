@@ -19,11 +19,11 @@
                 <p>Di halaman ini, Anda akan menemukan informasi terkini seputar acara, jadwal kegiatan, profil panitia, dan berbagai hal menarik lainnya yang dapat menambah kehangatan suasana Sidang Jemaat Rumah Tiga ke-44.</p>
             </span>
             <span class="jadwal">
-                <h2 class="title">Jadwal Persiapan Sampai Pelaksanaan Persidangan Ke 44 Jemaat Gpm Rumahtiga Tahun 2024</h2>
+                <h2 class="title">Jadwal Persiapan Sampai Pelaksanaan Persidangan Ke 44 Jemaat GPM Rumahtiga Tahun 2024</h2>
                 <table>
                     <tr>
                         <th>No</th>
-                        <th>Kegitan</th>
+                        <th>Kegiatan</th>
                         <th>Tanggal</th>
                         <th>Penanggung Jawab</th>
                     </tr>
@@ -172,7 +172,7 @@
             <div class="box">
                 <h3 class="title">Buku Panduan</h3>
                 <div class="content">
-                    <img src="{{ asset('img/buku-panduan.webp') }}">
+                    <img src="{{ asset('img/buku-panduan.png') }}">
                     <a href="" class="button"><i class="fa-regular fa-file-lines"></i>PDF</a>
                 </div>
             </div>
