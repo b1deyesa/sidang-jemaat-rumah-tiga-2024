@@ -18,7 +18,8 @@ $white      : #FFFFFF;
 
 body {
   display: flex;
-  background-color: $cream;
+  padding: 3em 0;
+  background-color: #282636;
 }
 body .display {
   display: flex;
@@ -26,7 +27,7 @@ body .display {
   width: 100%;
   max-width: 1000px;
   margin: auto;
-  border: 1px solid $dark-blue;
+  border: 5px solid #535070;
   background-color: $white;
 }
 
