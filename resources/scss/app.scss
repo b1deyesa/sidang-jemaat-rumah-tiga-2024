@@ -1,0 +1,248 @@
+@import './asset.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+$black      : #212121;
+$dark-blue  : #292a5b;
+$blue       : #333690;
+$light-blue : #5a5ee3;
+$purple     : #82037E;
+$yellow     : #F8B63F;
+$cream      : #F5E8D1;
+$gray       : #EEEEEE;
+$white      : #FFFFFF;
+
+:root {
+  font-size: .85em;
+}
+
+body {
+  display: flex;
+  background-color: $cream;
+}
+body .display {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  border: 1px solid $dark-blue;
+  background-color: $white;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.navbar .banner {
+  position: absolute;
+  width: 5.48em;
+  padding: .9em 1em;
+}
+.navbar .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .4em;
+  height: 4em;
+  padding: .5em 0 .5em 7.2em;
+  background-image: linear-gradient(270deg,#7b82ff,$light-blue);
+}
+.navbar .title h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.8em;
+  color: $white;
+}
+.navbar .title small {
+  font-size: .9em;
+  color: $yellow;
+}
+.navbar .menu {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 6.8em;
+  border-bottom: .3em solid $black;
+  background-image: linear-gradient($blue 50%,$dark-blue 50%);
+}
+.navbar .menu li a {
+  display: inline-block;
+  text-decoration: none;
+  padding: .6em .7em;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $blue;
+  }
+}
+
+.jumbotron {
+  position: relative;
+  border-bottom: .3em solid $gray;
+}
+.jumbotron .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-image: linear-gradient(90deg, #170b29a9 20%, transparent);
+}
+.jumbotron .swiper {
+  width: inherit;
+  height: 30em;
+}
+.jumbotron .swiper .swiper-slide img {
+  width: 100%;
+}
+
+.panel {
+  display: flex;
+  gap: 3em;
+  margin: .2em 0 0;
+  padding: 2.5em;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+.left .about .title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 1.3em;
+  margin: .7em 0 1em;
+  color: $blue;
+}
+.left .about img {
+  float: left; 
+  width: 15em;
+  margin: 0 .6em 0 0;
+}
+.left .about p {
+  line-height: 1.4em;
+  text-align: justify;
+  margin: 0 0 .8em;
+}
+.left .jadwal .title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 1.3em;
+  margin: 1.7em 0 1em;
+  color: $blue;
+}
+.left .jadwal table {
+  font-size: .9em;
+  border: 1px solid #444;
+}
+.left .jadwal table th {
+  font-weight: bolder;
+  vertical-align: middle;
+  padding: .4em;
+  border: 1px solid #444;
+  background-color: $yellow;
+}
+.left .jadwal table td {
+  line-height: 1.4em;
+  vertical-align: middle;
+  padding: .3em .5em;
+  border: 1px solid #444;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+  min-width: 300px;
+}
+.right .box .title {
+  font-weight: bold;
+  padding: .6em 1em;
+  background-image: linear-gradient($light-blue 50%,$blue 50%);
+  color: $white;
+}
+.right .box .content {
+  background: $gray;
+  padding: .8em 1em;
+}
+.right .box .content img {
+  width: 100%;
+}
+.right .box .content a.button {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 1em 0 0;
+  padding: .4em 1em;
+  border-radius: .5em;
+  border: 1px solid $light-blue;
+  color: $light-blue;
+  
+  &:hover {
+    background-color: $light-blue;
+    color: $white;
+  }
+}
+.right .box .content a.button i {
+  margin: 0 .5em 0 0;
+}
+.right .box .content table {
+  width: 100%;
+}
+.right .box .content table td {
+  padding: .3em .2em;
+}
+.right .box .content table td input {
+  width: 95%;
+}
+.right .box .content table td button {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  text-decoration: none;
+  width: 100%;
+  margin: 1em 0 0;
+  padding: .4em 1em;
+  border-radius: .5em;
+  cursor: pointer;
+  border: 1px solid $light-blue;
+  color: $light-blue;
+
+  &:hover {
+    background-color: $light-blue;
+    color: $white;
+  }
+}
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 7em;
+  margin: 1em 0 0;
+  padding: 2em;
+  border-radius: 10px;
+  border: 1px dashed #444;
+  color: #444;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+.drop-container:hover .drop-title {
+  color: #222;
+}
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
