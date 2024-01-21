@@ -1,9 +1,9 @@
 <x-layout.dashboard title="Absensi">
-    <div id="reader" width="600px"></div>
+    <div id="reader"></div>
     
     <form id='form' action="{{ route('peserta.absensi') }}" method="POST">
         @csrf
-        <input type="text" name="peserta" id="result">
+        <input type="hidden" name="peserta" id="result">
     </form>
     
     <script>
@@ -19,7 +19,7 @@
         let html5QrcodeScanner = new Html5QrcodeScanner("reader", { 
             fps: 10, 
             qrbox: { 
-                width: 400, height: 400
+                width: 200, height: 200
             } 
         }, false);
 

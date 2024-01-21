@@ -8,8 +8,6 @@
         <li><a href="{{ route('home') }}">Home</a></li>
         <li><a href="">Badan Pengurus</a></li>
         <li><a href="">Jadwal</a></li>
-        <li><a href="">Rencana Kerja</a></li>
-        <li><a href="">Absensi</a></li>
         <li><a href="{{ route('dashboard.index') }}">Login</a></li>
     </ul>
 </nav>

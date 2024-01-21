@@ -350,3 +350,96 @@ body .display {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .panel {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+
+  :root {
+    font-size: .75em;
+  }
+  
+  body {
+    padding: 0;
+  }
+  
+  .navbar .title {
+    padding: .5em 1em .5em 5.5em;
+  }
+  .navbar .title h1 {
+    font-size: 1.4em;
+  }
+  .navbar .title small {
+    font-size: .7em;
+  }
+  .navbar .banner {
+    width: 3.5em;
+  }
+  .navbar .menu {
+    padding: 0 0 0 1em;
+  }
+
+  .jumbotron .swiper {
+    width: inherit;
+    height: 20em;
+  }
+
+  .panel {
+    margin: 0;
+    padding: 1.5em;
+  }
+  
+  .left .about img {
+    width: 6em;
+    margin: .8em 0 0;
+    padding: 0 .5em 0 0;
+  }
+  .left .about .title {
+    font-size: 1.4em;
+  }
+  .left .jadwal .title {
+    font-size: 1.4em;
+  }
+
+  .right { 
+    max-width: 100%;
+  }
+
+  .dashboard {
+    flex-direction: column;
+  }
+  .dashboard .navigation {
+    padding: 1em;
+  }
+  .dashboard .navigation ul {
+    flex-direction: row;
+    gap: .4em;
+  }
+  .dashboard .navigation ul li {
+    width: 100%;
+    text-align: center;
+  }
+  .dashboard .navigation ul li a {
+    background-color: #9b5098;
+    color: $white;
+  
+    &:hover {
+      background-color: $purple;
+    }
+  
+    &.active {
+      background-image: linear-gradient(#3f233f,$purple);
+    }
+  }
+  .dashboard .content {
+    min-height: 70vh;
+    width: inherit;
+  }
+  .dashboard .content #reader {
+    min-width: 100%;
+
+  }
+}
