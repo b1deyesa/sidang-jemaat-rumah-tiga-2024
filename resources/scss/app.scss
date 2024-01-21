@@ -1,5 +1,4 @@
 @import './asset.scss';
-
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 $black      : #212121;
@@ -247,3 +246,107 @@ body .display {
   text-align: center;
   transition: color .2s ease-in-out;
 }
+
+.dashboard {
+  display: flex;
+  gap: 1em;
+}
+.dashboard .navigation {
+  padding: 2em .3em;
+  background-color: $gray;
+}
+.dashboard .navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: .1em;
+  min-width: 12em;
+}
+.dashboard .navigation ul li a {
+  display: block;
+  text-decoration: none;
+  padding: .6em 1em;
+  background-color: $light-blue;
+  color: $white;
+
+  &:hover {
+    background-color: $blue;
+  }
+
+  &.active {
+    background-image: linear-gradient($dark-blue,$blue);
+  }
+}
+.dashboard .content {
+  width: 100%;
+  padding: 2em 1.2em 4em;
+  min-height: 65vh;
+}
+.dashboard .content .title-menu {
+  font-size: 1.7em;
+  font-weight: bold;
+  padding: 0 0 .6em;
+  color: $dark-blue;
+}
+.dashboard .content .dataTable {
+  margin: 0 0 3em;
+}
+.dashboard .content .dataTable thead th {
+  padding: .5em 1em;
+  text-align: center;
+  border-top: 1px solid #beb19a;
+  border-bottom: 1px solid #beb19a;
+  border-right: 1px solid #beb19a;
+  background-color: $light-blue;
+  color: $white;
+  
+  &:first-child {
+    border-left: 1px solid #beb19a;
+  }
+}
+.dashboard .content .dataTable tbody td {
+  padding: .3em .8em;
+}
+.dashboard .content .dataTables_filter {
+  margin: 0 0 1em;
+}
+.dashboard .content .dataTable .action {
+  display: flex;
+  justify-content: center;
+  gap: .8em;
+}
+.dashboard .content .dataTable a,
+.dashboard .content .dataTable button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: $dark-blue;
+  cursor: pointer;
+}
+.dashboard .content .form {
+  width: fit-content;
+  background-color: $cream;
+
+}
+.dashboard .content .form table .title {
+  font-size: 1em;
+  font-weight: bold;
+  padding: .5em 1em;
+  background-color: $yellow;
+}
+.dashboard .content .form table input {
+  width: 16em;
+}
+.dashboard .content .form table tr td {
+  padding: .2em 1em;
+}
+.dashboard .content .form table tr:nth-child(2) td {
+  padding-top: 1em;
+}
+.dashboard .content .form table tr:last-child td {
+  padding-bottom: 1em;
+}
+.dashboard .content .form table tr td button {
+  margin: 1em 0 0;
+  width: 100%;
+}
+

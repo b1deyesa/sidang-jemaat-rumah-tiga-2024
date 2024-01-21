@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\PesertaController;
+use App\Http\Controllers\UtusanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'index')->name('home');
+Route::view('/dashboard', 'dashboard.index')->name('dashboard.index');
+Route::view('/dashboard/absensi', 'dashboard.absensi.index')->name('dashboard.index');
+Route::resource('/dashboard/utusan', UtusanController::class);
+Route::resource('/dashboard/peserta', PesertaController::class);
+
+Route::post('/dashboard/absensi', [PesertaController::class, 'absensi'])->name('peserta.absensi');

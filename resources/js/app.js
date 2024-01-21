@@ -1,5 +1,17 @@
 import "./bootstrap";
 
+$(document).ready(function() {
+    $('#DataTable').dataTable({
+        "bPaginate": false,
+        "bLengthChange": false,
+        "bFilter": true,
+        "bInfo": false,
+        "bAutoWidth": false,
+        "bSort": false,
+        "width": '10%'
+    });
+});
+
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
     centeredSlides: true,
