@@ -29,6 +29,15 @@ body .display {
   background-color: $white;
 }
 
+.undangan {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+.undangan img {
+  width: 100%;
+}
+
 .navbar {
   position: relative;
   display: flex;

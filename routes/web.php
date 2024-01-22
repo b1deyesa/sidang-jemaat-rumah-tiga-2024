@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'index')->name('home');
+Route::view('/undangan', 'undangan')->name('undangan');
 Route::view('/dashboard', 'dashboard.index')->name('dashboard.index');
 Route::view('/dashboard/absensi', 'dashboard.absensi.index')->name('dashboard.index');
 Route::resource('/dashboard/utusan', UtusanController::class);
