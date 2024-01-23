@@ -12,7 +12,7 @@ class Dashboard extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public $title = null
+        public $title = ''
     )
     {
         $this->title = $title;
