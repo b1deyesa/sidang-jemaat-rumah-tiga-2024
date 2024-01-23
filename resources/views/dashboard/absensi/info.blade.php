@@ -1,4 +1,4 @@
-<x-layout.dashboard>
+<x-layout.dashboard title="">
     <div class="info-absensi">
 
         @if (!$peserta)
