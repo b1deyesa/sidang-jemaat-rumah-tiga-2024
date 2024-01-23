@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\PesertaImport;
 use App\Models\Peserta;
 use App\Models\Utusan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PesertaController extends Controller
 {
@@ -14,7 +17,7 @@ class PesertaController extends Controller
     public function index()
     {
         return view('dashboard.peserta.index', [
-            'pesertas' => Peserta::orderBy('kode', 'asc')->get(),
+            'pesertas' => Peserta::orderByRaw('LENGTH(kode) asc')->orderBy('kode')->get(),
             'utusans' => Utusan::all()
         ]);
     }
@@ -33,16 +36,26 @@ class PesertaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'utusan' => 'required',
+            'kode' => 'required',
             'nama' => 'required'
         ]);
 
-        $last_utusan = Peserta::where('utusan_id', $request->utusan)->count();
-        $kode = Utusan::find($request->utusan)->kode . ($last_utusan + 1);
+        $check = Peserta::where('kode','LIKE', $request->kode)->first();
+        
+        if($check) {
+            return redirect()->back();
+        } 
+        
+        $remove_number = preg_replace('/[0-9]+/', '', $request->kode);
+        $utusan = Utusan::where('kode','LIKE', '%'.$remove_number.'%')->first();
+
+        if(!$utusan) {
+            return redirect()->back();
+        }
 
         Peserta::create([
-            'utusan_id' => $request->utusan,
-            'kode' => $kode,
+            'utusan_id' => $utusan->id,
+            'kode' => $request->kode,
             'nama' => $request->nama
         ]);
 
@@ -73,26 +86,29 @@ class PesertaController extends Controller
      */
     public function update(Request $request, Peserta $pesertum)
     {
-        if($pesertum->kode !== $request->kode) {
-            $request->validate([
-                'kode' => 'required|unique:pesertas,kode',
-            ]);
-        }
+        // if($pesertum->kode !== $request->kode) {
+        //     $request->validate([
+        //         'kode' => 'required|unique:pesertas,kode',
+        //     ]);
+        // }
 
         $request->validate([
-            'utusan' => 'required',
             'nama' => 'required',
             'status' => 'required'
         ]);
 
-        $utusan = Utusan::where('keterangan', $request->utusan)->first();
 
         $pesertum->update([
-            'kode' => $request->kode,
-            'utusan_id' => $utusan['id'],
+            // 'kode' => $request->kode,
             'nama' => $request->nama,
             'status' => $request->status
         ]);
+
+        if($request->status !== 'Hadir') {
+            $pesertum->update([
+                'waktu_absen' => null
+            ]);
+        }
 
         return redirect()->route('peserta.index');
     }
@@ -110,21 +126,50 @@ class PesertaController extends Controller
     public function absensi(Request $request)
     {
         $peserta = Peserta::where('kode', $request->peserta)->first();
-
+        
         if($peserta) {
-            if($peserta->status != 'Hadir') {
+            if($peserta->status !== 'Hadir') {
                 $peserta->update([
                     'status' => 'Hadir',
                     'info' => 'Masuk',
+                    'waktu_absen' => now()->toDateTimeString(),
                 ]);
+
                 return view('dashboard.absensi.info', [
-                    'peserta' => $peserta
+                    'peserta' => $peserta,
+                    'status' => true,
+                    'message' => 'Berhasil Absen'
                 ]);
             } else {
-                return dd('Sudah Absensi');
+                return view('dashboard.absensi.info', [
+                    'peserta' => $peserta,
+                    'status' => false,
+                    'message' => 'Sudah Absen'
+                ]);
             }
         } else {
-            return 'kosong';
+            return view('dashboard.absensi.info', [
+                'peserta' => false,
+                'message' => $request->peserta
+            ]);
         }
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required'
+        ]);
+
+        Excel::import(new PesertaImport,$request->file('file'));
+
+        return redirect()->back();
+    }
+
+    public function reset()
+    {
+        Peserta::truncate();  
+        
+        return redirect()->back();
     }
 }

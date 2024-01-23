@@ -6,8 +6,9 @@
     </div>
     <ul class="menu">
         <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="">Badan Pengurus</a></li>
-        <li><a href="">Jadwal</a></li>
-        <li><a href="{{ route('dashboard.index') }}">Login</a></li>
+        {{-- <li><a href="">Badan Pengurus</a></li> --}}
+        <li><a href="{{ route('peserta') }}">Peserta</a></li>
+        <li><a href="{{ route('absensi') }}">Absensi</a></li>
+        <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
     </ul>
 </nav>

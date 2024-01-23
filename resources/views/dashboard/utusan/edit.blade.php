@@ -8,7 +8,8 @@
                 label='Kode Utusan'
                 name='kode'
                 placeholder='Masukkan kode utusan' 
-                :value="$utusan->kode" />
+                :value="$utusan->kode"
+                />
             <x-input
                 type='text'
                 label='Utusan'

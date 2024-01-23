@@ -16,12 +16,17 @@
     <script src="{{ asset('assets/datatables/jquery-3.7.0.js') }}"></script>
     <script src="{{ asset('assets/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    @livewireStyles
+    @livewireScripts
 
 </head>
 <body style="background-image: url('{{ asset('img/pattern.jpg') }}');">
     <div class="display">
         <x-navbar/>
-        {{ $slot }}
+        <div class="content">
+            {{ $slot }}
+        </div>
     </div>
+    @stack('js')
 </body>
 </html>

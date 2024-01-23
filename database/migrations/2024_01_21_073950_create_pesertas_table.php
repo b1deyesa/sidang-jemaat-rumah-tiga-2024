@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->enum('status', ['Hadir', 'Tidak Hadir'])->default('Tidak Hadir');
             $table->enum('info', ['Masuk', 'Keluar'])->default('Keluar');
+            $table->timestamp('waktu_absen')->nullable();
             $table->timestamps();
         });
     }

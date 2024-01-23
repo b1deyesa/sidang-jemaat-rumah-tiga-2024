@@ -1,6 +1,8 @@
 @if ($type == 'button')
 <tr>
-    <td colspan="3"><button>{{ $label }}</button></td>
+    <td></td>
+    <td></td>
+    <td><button>{{ $label }}</button></td>
 </tr>
 @else
 <tr>
@@ -8,7 +10,7 @@
     <td>:</td>
     <td>        
     @if ($type == 'text')
-        <input type="text" name="{{ $name }}" id="{{ $name }}" placeholder="{{ $placeholder }}" autocomplete="off" value="{{ old($name, $value) }}">
+        <input type="text" name="{{ $name }}" id="{{ $name }}" placeholder="{{ $placeholder }}" autocomplete="off" value="{{ old($name, $value) }}" {{ $disable ? 'disabled' : '' }}>
     @elseif ($type == 'select')
         <select name="{{ $name }}" id="{{ $name }}">
             <option value="{{ old('', $value) }}">{{ $value ? $value : $placeholder }}</option>

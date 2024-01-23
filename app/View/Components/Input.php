@@ -18,7 +18,8 @@ class Input extends Component
         public $placeholder = null,
         public $option = false,
         public $value = false,
-    )
+        public $disable = false,
+        )
     {
         $this->type = $type;
         $this->label = $label;
@@ -26,6 +27,7 @@ class Input extends Component
         $this->placeholder = $placeholder;
         $this->option = $option;
         $this->value = $value;
+        $this->disable = $disable;
     }
 
     /**

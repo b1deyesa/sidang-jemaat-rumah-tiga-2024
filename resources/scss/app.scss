@@ -28,6 +28,9 @@ body .display {
   box-shadow: 5px 5px 10px #00000020;
   background-color: $white;
 }
+body .display > .content {
+  min-height: 70vh;
+}
 
 .undangan {
   display: flex;
@@ -229,6 +232,178 @@ body .display {
   }
 }
 
+.peserta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+.peserta .title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 0 1em;
+}
+.peserta table {
+  width: 100%;
+  max-width: 600px;
+}
+.peserta table tr th {
+  font-weight: bold;
+  padding: .5em 1em;
+  border: 1px solid $black;
+  background-color: $yellow;
+}
+.peserta table tr td {
+  padding: .3em 1em;
+  border: 1px solid $black;
+}
+
+.absensi {
+  padding: 2em;
+}
+.absensi .big-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 0 1em;
+}
+.absensi .daftar {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2em;
+  margin: 0 0 2em;
+}
+.absensi .daftar .table {
+  display: block;
+  width: 100%;
+  overflow: scroll;
+  border: 1px solid #AAA;
+  background-color: $gray;
+}
+.absensi .daftar .table table {
+  width: 100%;
+  background-color: $white;
+}
+.absensi .daftar .table table tr th {
+  font-weight: bold;
+  padding: .4em .6em;
+  border: 1px solid #666;
+  background-color: $light-blue;
+  color: $white;
+
+  &:first-child {
+    border-right: 1px solid $gray;
+  }
+}
+.absensi .daftar .table table tr td {
+  padding: .25em .6em;
+  border: 1px solid #666;
+}
+.absensi .daftar .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 15em;
+  border: 1px solid $black;
+}
+.absensi .daftar .card h4 {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  padding: .5em 1em;
+  border-bottom: 1px solid $black;
+  background-color: $yellow;
+}
+.absensi .daftar .card p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  font-weight: bolder;
+  height: 100%;
+  padding: .5em 1em;
+}
+.absensi .parameter-kehadiran {
+  display: flex;
+  gap: 1em;
+  margin: 0 0 2em;
+}
+.absensi .parameter-kehadiran .kehadiran {
+  width: 100%;
+}
+.absensi .parameter-kehadiran .kehadiran td {
+  padding: .2em 1em;
+  border: 1px solid $dark-blue;
+  background-color: #ebecff;
+}
+.absensi .parameter-kehadiran .kehadiran tr:first-child td {
+  font-size: 1.2em;
+  padding: .6em;
+  font-weight: bold;
+  text-align: center;
+  background-color: $light-blue;
+  color: $white;
+}
+.absensi .parameter-kehadiran .kehadiran tr td:nth-child(2) {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+.absensi .parameter-kehadiran .kehadiran tr:last-child td {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f4f4ff;
+} 
+.absensi .parameter-sektor {
+  border: 1px solid $black;
+  overflow-y: auto;
+}
+.absensi .parameter-sektor tr td {
+  text-align: center;
+  padding: .3em .6em;
+  border: 1px solid $black;
+}
+.absensi .parameter-sektor tr td:first-child {
+  text-align: start;
+  white-space: nowrap;
+}
+.absensi .parameter-sektor tr:first-child td {
+  font-size: .9em;
+  font-weight: bold;
+  padding: 1em;
+  background-color: $yellow;
+}
+.absensi .parameter-sektor tr:last-child td {
+  font-weight: bold;
+  background-color: $yellow;
+}
+
+.info-absensi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-absensi table td {
+  padding: .5em 1em;
+}
+.info-absensi .status {
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0 2em;
+}
+.info-absensi a.button {
+  display: block;
+  text-decoration: none;
+  width: fit-content;
+  margin: 3em 0 0;
+  padding: .4em 1em;
+  border-radius: .3em;
+  background-color: $dark-blue;
+  color: $white;
+}
+
 .drop-container {
   position: relative;
   display: flex;
@@ -290,6 +465,45 @@ body .display {
   padding: 2em 1.2em 4em;
   min-height: 65vh;
 }
+.dashboard .content .add_data {
+  display: flex;
+  align-items: stretch;
+  gap: 1em;
+  width: 100%; 
+  margin: 0 0 2em;
+}
+.dashboard .content .add_data .add {
+  width: 100%;
+}
+.dashboard .content .add_data .add form {
+  height: 100%;
+  width: 100%;
+}
+.dashboard .content .add_data .add table {
+  min-width: 100%;
+  margin: 0 0 2em;
+}
+.dashboard .content .add_data .add form .keterangan th {
+  font-weight: bold;
+  border: 1px solid #999;
+  padding: .3em .5em;
+}
+.dashboard .content .add_data .add form .keterangan td {
+  padding: .1em .5em;
+  border: 1px solid #999;
+}
+.dashboard .content .add_data .action {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1em;
+}
+.dashboard .content .add_data .action form {
+  width: 100%;
+}
+.dashboard .content .add_data .action form table {
+  width: 100%;
+}
 .dashboard .content .title-menu {
   font-size: 1.7em;
   font-weight: bold;
@@ -302,6 +516,7 @@ body .display {
 .dashboard .content .dataTable thead th {
   padding: .5em 1em;
   text-align: center;
+  vertical-align: middle;
   border-top: 1px solid #beb19a;
   border-bottom: 1px solid #beb19a;
   border-right: 1px solid #beb19a;
@@ -332,21 +547,20 @@ body .display {
   cursor: pointer;
 }
 .dashboard .content .form {
-  width: fit-content;
-  background-color: $cream;
-
+  border: 1px solid $purple;
 }
 .dashboard .content .form table .title {
   font-size: 1em;
   font-weight: bold;
   padding: .5em 1em;
-  background-color: $yellow;
+  background-color: $purple;
+  color: $white;
 }
 .dashboard .content .form table input {
   width: 16em;
 }
 .dashboard .content .form table tr td {
-  padding: .2em 1em;
+  padding: .2em .6em;
 }
 .dashboard .content .form table tr:nth-child(2) td {
   padding-top: 1em;
@@ -363,6 +577,10 @@ body .display {
   .panel {
     flex-direction: column;
   }
+
+  .dashboard .content .add_data {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 576px) {
@@ -373,6 +591,9 @@ body .display {
   
   body {
     padding: 0;
+  }
+  body > .display > .content {
+    min-height: 90vh;
   }
   
   .navbar .title {
@@ -417,6 +638,10 @@ body .display {
     max-width: 100%;
   }
 
+  .absensi {
+    font-size: .8em;
+  }
+
   .dashboard {
     flex-direction: column;
   }
@@ -450,5 +675,13 @@ body .display {
   .dashboard .content #reader {
     min-width: 100%;
 
+  }
+
+  .dashboard .content .table {
+    font-size: .6em;
+  }
+  
+  .info-absensi {
+    font-size: 1.2em;
   }
 }

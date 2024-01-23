@@ -8,17 +8,8 @@
                 label='Kode Peserta'
                 name='kode'
                 placeholder='Masukkan kode peserta' 
-                :value="$peserta->kode" />
-            <x-input 
-                type='select'
-                label='Utusan'
-                name='utusan'
-                placeholder='Pilih utusan'
-                :value="$peserta->utusan->keterangan">
-                @foreach ($utusans as $utusan)
-                    <option value="{{ $utusan->keterangan }}">{{ $utusan->keterangan }}</option>
-                @endforeach
-            </x-input>
+                :value="$peserta->kode" 
+                :disable="true" />
             <x-input
                 type='text'
                 label='Nama Peserta'
