@@ -276,9 +276,11 @@ body .display > .content {
 .absensi .daftar .table {
   display: block;
   width: 100%;
+  height: 30em;
   overflow: scroll;
   border: 1px solid #AAA;
   background-color: $gray;
+  overflow-y: scroll;
 }
 .absensi .daftar .table table {
   width: 100%;
